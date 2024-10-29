@@ -1,0 +1,73 @@
+import { Project, PO } from '../types/project';
+
+export const mockProjects: Project[] = [
+  {
+    id: '1',
+    projectNumber: '001-2403',
+    manager: '김철수',
+    announcementNumber: 'AN-2024-001',
+    maxBidAmount: 550000000,
+    startDate: new Date('2024-03-01'),
+    endDate: new Date('2024-12-31'),
+    status: 'active',
+    createdAt: new Date('2024-03-01'),
+    budget: {
+      expectedBidAmount: 550000000,
+      vatExcluded: 500000000,
+      agencyFee: 40000000,
+      companyMargin: 50000000,
+      internalLabor: 37500000,
+      internalLaborRate: 7.5,
+      availableBudget: 372500000,
+    },
+  },
+  {
+    id: '2',
+    projectNumber: '002-2403',
+    manager: '이영희',
+    announcementNumber: 'AN-2024-002',
+    maxBidAmount: 330000000,
+    startDate: new Date('2024-03-15'),
+    endDate: new Date('2024-09-30'),
+    status: 'draft',
+    createdAt: new Date('2024-03-15'),
+    budget: {
+      expectedBidAmount: 330000000,
+      vatExcluded: 300000000,
+      agencyFee: 24000000,
+      companyMargin: 30000000,
+      internalLabor: 22500000,
+      internalLaborRate: 7.5,
+      availableBudget: 223500000,
+    },
+  },
+];
+
+export const mockPOs: PO[] = [
+  {
+    id: '1',
+    projectId: '1',
+    poNumber: '001-2403-001',
+    amount: 275000000,
+    invoiceType: '세금계산서',
+    supplyAmount: 250000000,
+    taxAmount: 25000000,
+    deductionAmount: 0,
+    paymentType: '선금',
+    status: 'pending',
+    createdAt: new Date('2024-03-05'),
+  },
+  {
+    id: '2',
+    projectId: '1',
+    poNumber: '001-2403-002',
+    amount: 110000000,
+    invoiceType: '사업소득',
+    supplyAmount: 106370000,
+    taxAmount: 0,
+    deductionAmount: 3630000,
+    paymentType: '잔금',
+    status: 'pending',
+    createdAt: new Date('2024-03-10'),
+  },
+];
